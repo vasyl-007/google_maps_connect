@@ -4,26 +4,55 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Google_maps</title>
-    <link rel="./styles.css" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <style>
+      #map {
+        height: 400px;
+        width: 100%;
+      }
+    </style>
   </head>
   <body>
     <div>
       <h2>Tech providers</h2>
-      <ul>
-        <li>
-          <h3>Toshiba</h3>
-          <p>
+      <ul class="products__list">
+        <li class="products__list-item">
+          <h3 class="product__header">Toshiba</h3>
+          <p class="product__info">
             Specializations: Semiconductors, Storage Products, Microwave
             Semiconductors and Components, etc.
           </p>
-          <p>tel: +81-3-3246-1842</p>
-          <p>
+          <p class="product__info">tel: +81-3-3246-1842</p>
+          <p class="product__info">
             Address: Hamamatsucho; Kawasaki. Hamamatsucho. Address: 1-1,
             Shibaura 1-chome
           </p>
+          <button class="button__show-map">Show on map</button>
         </li>
-        <button>Show on map</button>
       </ul>
+
+      <div></div>
     </div>
+    <script type="module" src="./index.js"></script>
+
+    <div id="map"></div>
+    <script>
+      function initMap() {
+        var opt = {
+          center: { lat: 50.43884, lng: 30.523433 },
+          zoom: 15,
+        };
+
+        var map = new google.maps.Map(document.getElementById("map"), opt);
+
+        // setMarkers(map);
+      }
+    </script>
+
+    <script
+      async
+      defer
+      src="https://maps.googleapis.com/maps/api/js?key=${YOUR_API_KEY}&callback=initMap"
+    ></script>
   </body>
 </html>
