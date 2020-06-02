@@ -5,16 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Google_maps</title>
     <link rel="stylesheet" href="./css/styles.css" />
-    <style>
-      #map {
+    <!-- <style>
+      #modal__maps_id {
         height: 400px;
-        width: 100%;
+        width: 50%;
       }
-    </style>
+    </style> -->
   </head>
   <body>
-    <div>
-      <h2>Tech providers</h2>
+    <h2>Tech providers</h2>
+    <div class="li__container">
       <ul class="products__list">
         <li class="products__list-item">
           <h3 class="product__header">Toshiba</h3>
@@ -27,15 +27,23 @@
             Address: Hamamatsucho; Kawasaki. Hamamatsucho. Address: 1-1,
             Shibaura 1-chome
           </p>
-          <button class="button__show-map">Show on map</button>
+          <button id="btn__show_map" class="button__show-map">Show on map</button>
         </li>
+
+        <div id="modal__maps_id"></div>
       </ul>
-
-      <div></div>
     </div>
-    <script type="module" src="./index.js"></script>
+    <script type="text/javascript" src="./index.js"></script>
 
-    <div id="map"></div>
+    <script type="text/javascript">
+    
+      const showBtn = document.querySelector("#btn__show_map");
+      console.log(showBtn);
+
+      
+
+    </script>
+
     <script>
       function initMap() {
         var opt = {
@@ -43,16 +51,34 @@
           zoom: 15,
         };
 
-        var map = new google.maps.Map(document.getElementById("map"), opt);
+        var map = new google.maps.Map(
+          document.getElementById("modal__maps_id"),
+          opt
+        );
 
         // setMarkers(map);
       }
     </script>
-
+    <script type="text/javascript">
+      var PERSONAL_API_KEY_SECRET = "AIzaSyBMBAt48zxbNQ25d0wN7PyzrTGB9KlK6kA";
+    </script>
     <script
       async
       defer
-      src="https://maps.googleapis.com/maps/api/js?key=${YOUR_API_KEY}&callback=initMap"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBMBAt48zxbNQ25d0wN7PyzrTGB9KlK6kA&callback=initMap"
     ></script>
+
+    <style rel="stylesheet">
+      .maps_container {
+        display: block;
+        width: 250px;
+        height: 100px;
+      }
+    </style>
+
+    <!-- ================================================= -->
+
+
+    <!-- ================================================= -->
   </body>
 </html>
