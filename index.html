@@ -43,10 +43,17 @@
       console.log(showBtn);
       console.log(showModalWindow);
 
-      showBtn.addEventListener("click", showGoogleMap);
+      showBtn.addEventListener("click", toggleGoogleMap);
 
-      function showGoogleMap() {
-        showModalWindow.classList.add("active");
+      function toggleGoogleMap() {
+        if (showBtn.innerHTML === "Hide map") {
+          showModalWindow.classList.remove("active");
+          showBtn.innerHTML = "Show on map";
+        } else {
+          showModalWindow.classList.add("active");
+          showBtn.innerHTML = "Hide map";
+        }
+        // showBtn.innerHTML = "Hide map";
       }
     </script>
 
