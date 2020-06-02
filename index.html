@@ -27,21 +27,27 @@
             Address: Hamamatsucho; Kawasaki. Hamamatsucho. Address: 1-1,
             Shibaura 1-chome
           </p>
-          <button id="btn__show_map" class="button__show-map">Show on map</button>
+          <button id="btn__show_map" class="button__show-map">
+            Show on map
+          </button>
         </li>
 
-        <div id="modal__maps_id"></div>
+        <div class="modal__window_map" id="modal__maps_id"></div>
       </ul>
     </div>
     <script type="text/javascript" src="./index.js"></script>
 
     <script type="text/javascript">
-    
-      const showBtn = document.querySelector("#btn__show_map");
+      const showBtn = document.querySelector(".button__show-map");
+      const showModalWindow = document.getElementById("modal__maps_id");
       console.log(showBtn);
+      console.log(showModalWindow);
 
-      
+      showBtn.addEventListener("click", showGoogleMap);
 
+      function showGoogleMap() {
+        showModalWindow.classList.add("active");
+      }
     </script>
 
     <script>
@@ -77,7 +83,6 @@
     </style>
 
     <!-- ================================================= -->
-
 
     <!-- ================================================= -->
   </body>
